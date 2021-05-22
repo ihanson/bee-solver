@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	async function allWords() {
-		return (await fetch("words.txt")).text();
+		return (await (await fetch("words.txt")).text()).split("\n");
 	}
 
 	function canMakeWord(letters, centerLetter, word) {
