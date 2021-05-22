@@ -1,0 +1,100 @@
+body {
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16pt;
+	background-color: white;
+	color: black;
+	height: 100%;
+	max-width: 30ex;
+}
+
+html, body {
+	height: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+form {
+	width: 100%;
+}
+
+#result {
+	overflow-y: hidden;
+}
+
+button {
+	font-size: 18pt;
+	display: block;
+	width: 100%;
+}
+
+.fieldRow {
+	display: flex;
+	gap: 1em;
+}
+
+.labelInput {
+	display: inline-block;
+	margin-bottom: 0.5em;
+}
+
+.labelInput > * {
+	display: block;
+}
+
+.lettersLabel {
+	flex: 1;
+}
+
+input:not([type]), input[type=text] {
+	border: 1px solid black;
+	font-size: 24pt;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+input.centerLetter {
+	width: 2em;
+}
+
+input:invalid {
+	background-color: beige;
+	color: darkblue;
+}
+
+.solution {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+ul {
+	box-sizing: border-box;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+li {
+	list-style: circle;
+	margin-bottom: 0.5em;
+}
+
+a {
+	font-family: Consolas, 'Courier New', Courier, monospace;
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.pangram a {
+	background-color: yellow;
+}
