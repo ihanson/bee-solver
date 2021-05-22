@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+	const wordList = allWords();
 	addEntryForm();
 
 	function addEntryForm() {
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	async function solution(letters, centerLetter) {
 		return (
-			(await allWords())
+			(await wordList)
 				.filter((word) => canMakeWord(letters, centerLetter, word))
 				.sort(multiSort(
 					(word1, word2) => score(letters, word2) - score(letters, word1),
@@ -83,7 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	async function allWords() {
-		return (await (await fetch("words.txt")).text()).split("\n");
+		return (
+			await (await fetch("words.txt")
+		).text()).split("\n").map((word) => word.trim());
 	}
 
 	function canMakeWord(letters, centerLetter, word) {
