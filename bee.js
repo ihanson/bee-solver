@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				}, [
 					el("a", {
 						href: link(word),
+						target: "_blank",
 					}, [t(word.toLocaleLowerCase())])
 				])),
 			),
